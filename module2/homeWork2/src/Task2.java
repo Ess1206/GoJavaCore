@@ -13,7 +13,7 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        double balanceAfter = withdrawBalance(100,99);
+        double balanceAfter = withdrawBalance(100,10);
 
 
 
