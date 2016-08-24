@@ -3,62 +3,175 @@
  */
 public class Task1 {
 
-    static int balancesSum(int[] balances) {
-        int sum = 0;
-        for (int balance : balances) {
-            if (balance > 1000 && balance < 5000) {
-                sum += balance;
+    static int sum(int array[]){
+
+        int sum=array[0];
+        for (int i=1; i<array.length; i++) {
+            sum += array[i];
             }
+    return sum;
+    }
+
+    static double sum(double array[]){
+        double sum=array[0];
+        for (int i=1; i<array.length; i++) {
+            sum += array[i];
         }
         return sum;
     }
 
-    static String[] getOwnerNames(int[] balances, String[] names) {
-        int ownersCount = 0;
-        for (int balance : balances) {
-            if (balance > 1000) ownersCount++;
+    static int intMin(int array[]){
+        int min = array[0];
+        for (int i=1; i<array.length; i++) {
+            if (min>array[i])min=array[i];
         }
+        return min;
+    }
 
-        String[] result = new String[ownersCount];
+    static double doubleMin(double array[]){
+        double min = array[0];
+        for (int i=1; i<array.length; i++) {
+            if (min>array[i])min=array[i];
+        }
+        return min;
+    }
 
-        int index = 0;
-        for (int i = 0; i < balances.length; i++) {
-            if (balances[i] > 1000) {
-                result[index] = names[i];
-                index++;
+    static int intMax(int array[]){
+        int max = array[0];
+        for (int i=1; i<array.length; i++) {
+            if (max<array[i])max=array[i];
+        }
+        return max;
+    }
+    static double doubleMax(double array[]){
+        double max = array[0];
+        for (int i=1; i<array.length; i++) {
+            if (max<array[i])max=array[i];
+        }
+        return max;
+    }
+
+    static int intMaxPositive(int array[]){
+        int max = array[0];
+        int maxPositive=0;
+        for (int i=1; i<array.length; i++) {
+            if (max<array[i])max=array[i];
+        }
+        if (max>0)maxPositive = max;
+        if (max<=0) System.out.println("no Positive");
+
+        return maxPositive;
+    }
+    static double doubleMaxPositive(double array[]){
+        double max = array[0];
+        double maxPositive = 0;
+
+        for (int i=1; i<array.length; i++) {
+            if (max<array[i])max=array[i];
+        }
+        if (max>0)maxPositive = max;
+        if (max<=0) System.out.println("no Positive");
+
+        return maxPositive;
+    }
+
+
+    static long multiplication(int array[]){
+
+        long multiplication=array[0];
+
+        for (int i=1; i<array.length; i++) {
+            multiplication *= array[i];
+        }
+        return multiplication;
+    }
+
+    static double multiplication(double array[]){
+        double multiplication=array[0];
+        for (int i=1; i<array.length; i++) {
+            multiplication *= array[i];
+        }
+        return multiplication;
+    }
+
+    static int modulus(int array[]){
+
+        int modulus=array[0];
+
+        for (int i=1; i<array.length; i++) {
+            modulus %= array[i];
+        }
+        return modulus;
+    }
+
+    static double modulus(double array[]){
+        double modulus=array[0];
+        for (int i=1; i<array.length; i++) {
+            modulus %= array[i];
+        }
+        return modulus;
+    }
+
+    static int intSecondLargest(int array[]){
+        int firstleLargest = 0;
+        int secondLargest  = 0;
+        for (int i=0; i<array.length; i++) {
+            if (firstleLargest<array[i]) {
+                secondLargest = firstleLargest;
+                firstleLargest = array[i];
             }
+            else if(secondLargest<firstleLargest&&secondLargest<array[i])secondLargest=array[i];
+
+
         }
-
-        return result ;
+        return secondLargest;
     }
 
-    //HOMEWORK 2.1
-    static double withdrawBalance(double balance, double withdrawal) {
 
-        return 0;
+    static double doubleSecondLargest(double array[]){
+        double firstleLargest = 0;
+        double secondLargest  = 0;
+        for (int i=0; i<array.length; i++) {
+            if (firstleLargest<array[i]) {
+                secondLargest = firstleLargest;
+                firstleLargest = array[i];
+            }
+            else if(secondLargest<firstleLargest&&secondLargest<array[i])secondLargest=array[i];
+
+
+        }
+        return secondLargest;
     }
 
-    //HOMEWORK 2.2
-    static double withdrawBalance(String ownerName, double withdrawal) {
-        return 0;
-    }
-
-    //HOMEWORK 2.3
-    static double fundBalance(String ownerName, double fund) {
-
-        return 0;
-    }
 
 
     public static void main(String[] args) {
 
-        int[] balances = {1200, 250, 2000, 500, 3200};
-        String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
+        int[] intArray = {1, 8, 13, 12, 40, 51, 7, 35, 99 , 1};
+        double[] doubleArray = {1, 8, 13, 12, 40, 51, 7, 35, 99 , 1};
 
-        int[] balances1 = {200, 200, 500, 4000, 30};
-
-
+        System.out.println(sum(intArray));
+        System.out.println(sum(doubleArray));
+        System.out.println();
+        System.out.println(intMin(intArray));
+        System.out.println(doubleMin(doubleArray));
+        System.out.println();
+        System.out.println(intMax(intArray));
+        System.out.println(doubleMax(doubleArray));
+        System.out.println();
+        System.out.println(intMaxPositive(intArray));
+        System.out.println(doubleMaxPositive(doubleArray));
+        System.out.println();
+        System.out.println(intSecondLargest(intArray));
+        System.out.println(doubleSecondLargest(doubleArray));
+        System.out.println();
+        System.out.println(multiplication(intArray));
+        System.out.println(multiplication(doubleArray));
+        System.out.println();
+        System.out.println(modulus(intArray));
+        System.out.println(modulus(doubleArray));
 
 
     }
+
 }
