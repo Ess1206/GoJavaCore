@@ -13,7 +13,10 @@ static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
             if (ownerNames[i]==ownerName) {
                 balanceAfter = balances[i] + fund;
             }
+
         }
+        if (balanceAfter==0) System.out.println(ownerName+" out of list owners");
+
         return balanceAfter;
     }
 
