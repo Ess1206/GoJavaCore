@@ -1,3 +1,5 @@
+package homeWork.task1;
+
 public class Animal {
 
     void walk() {
