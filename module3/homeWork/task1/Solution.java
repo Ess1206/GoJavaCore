@@ -7,9 +7,7 @@ public class Solution {
         animal.walk();
         bird.fly();
         bird.sing();
-        bird.whoAmI();
-
-
-
+        System.out.println("I am Bird");
     }
+
 }
