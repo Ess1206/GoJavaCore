@@ -57,8 +57,8 @@
 
         }
 
-    /*String[] myStringArray0 = new String[3];
-    String[] myStringArray1 = {"a", "b", "c"};
-    String[] myStringArray2 = new String[]{"a", "b", "c"};*/
+    /*webinar.String[] myStringArray0 = new webinar.String[3];
+    webinar.String[] myStringArray1 = {"a", "b", "c"};
+    webinar.String[] myStringArray2 = new webinar.String[]{"a", "b", "c"};*/
     }
 

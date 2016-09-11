@@ -23,18 +23,6 @@ public class CollegeStudent extends Student {
         super(lastName, coursesTaken);
     }
 
-    public void setCollegeName(String collegeName) {
-        this.collegeName = collegeName;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getCollegeName() {
         return collegeName;
     }
