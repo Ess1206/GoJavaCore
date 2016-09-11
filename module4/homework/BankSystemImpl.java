@@ -35,6 +35,6 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void paySalary(User user) {
         //user balance + salary - commision
-        user.setBalance(user.getSalary()-user.getBank().getCommission(user.getSalary()));
+        user.setBalance(user.getBalance()+user.getSalary());
     }
 }

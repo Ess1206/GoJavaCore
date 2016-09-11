@@ -37,7 +37,26 @@ public class Main {
         euBank.setCurrency(Currency.USD);
         user2.setSalary(1000);
         System.out.println(user2);
+        System.out.println("________________________________________________");
 
+//User2____________________________________________________________________
+        chBank.setCurrency(Currency.EUR);
+        User user3 = new User();
+        user3.setName("User3");
+        user3.setBank(chBank);
+        user3.setBalance(8000);
+        user3.setCompanyName("HP");
+        user3.setSalary(200);
+        System.out.println(user3);
+        System.out.println("paySalary to user 3");
+        bankSystem.paySalary(user3);
+        System.out.println(user3);
+        System.out.println("User3 transferMoney 1000 to user1");
+        System.out.println(user1);
+        bankSystem.transferMoney(user3,user1,1000);
+        System.out.println("User 1" +user1);
+        System.out.println("User 3" +user3);
 
     }
+
 }

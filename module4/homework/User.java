@@ -69,7 +69,7 @@ public class User {
 
     public void setSalary(int salary) {
         this.salary = salary;
-        setBalance(getBalance()+salary-bank.getCommission(salary));
+     //   setBalance(getBalance()+salary-bank.getCommission(salary));
     }
 
     public void setBank(Bank bank) {
