@@ -8,11 +8,12 @@ public class BankSystemImpl implements BankSystem {
         Bank userBank = user.getBank();
 
         double commission = userBank.getCommission(amount) / 100; //5 -> 0.05
-        if (userBank.getLimitOfWithdrawal() >= amount + amount * commission) {
+        if (userBank.getLimitOfWithdrawal() >= amount + amount * commission && (amount+commission<= user.getBalance())) {
             //do logic if rules allow
             double newBalance = user.getBalance() - amount - amount * commission;
             user.setBalance(newBalance);
         }
+
         else System.out.println("can't do withdrawOfUser");
     }
 
