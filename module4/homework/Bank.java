@@ -7,11 +7,43 @@ public abstract class Bank {
     private Currency currency;
     private int numberOfEmployee;
     private double avrSalaryOfEmloyee;
-    private long rating;
+    private double rating;
     private long totalCapital;
+/*
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        //if (o == null || getClass() != o.getClass()) return false;
+        Bank bank = null;
+        if (o.getClass()==Bank.class) {
+            bank = (Bank) o;
+        }
+        return id == bank.id;
 
+    }*/
 
-//Getters____________________________________________________________________________
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bank bank = (Bank) o;
+
+        if (id != bank.id) return false;
+        if (numberOfEmployee != bank.numberOfEmployee) return false;
+        if (Double.compare(bank.avrSalaryOfEmloyee, avrSalaryOfEmloyee) != 0) return false;
+        if (Double.compare(bank.rating, rating) != 0) return false;
+        if (totalCapital != bank.totalCapital) return false;
+        return bankCounty != null ? bankCounty.equals(bank.bankCounty) : bank.bankCounty == null && currency == bank.currency;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
+
+    //Getters____________________________________________________________________________
 
     public long getId() {
         return id;
@@ -33,7 +65,7 @@ public abstract class Bank {
         return avrSalaryOfEmloyee;
     }
 
-    public long getRating() {
+    public double getRating() {
         return rating;
     }
 

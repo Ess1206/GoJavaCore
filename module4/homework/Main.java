@@ -3,6 +3,7 @@ package homework;
 
 public class Main {
     public static void main(String[] args) {
+/*
         //BankSystemImpl -> User -> Bank
 
         Bank usBank = new USBank();
@@ -56,7 +57,17 @@ public class Main {
         bankSystem.transferMoney(user3,user1,1000);
         System.out.println("User 1" +user1);
         System.out.println("User 3" +user3);
+*/
+
+        Bank bank1 = new EUBank();
+        Bank bank2 = new USBank();
+        Bank bank3 = new ChinaBank();
+
+        System.out.println(bank1.equals(bank2));
+
 
     }
+
+
 
 }

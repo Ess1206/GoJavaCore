@@ -1,4 +1,4 @@
-package practies;
+package practies.task1;
 
 /**
  * Created by Stan on 12.09.2016.
