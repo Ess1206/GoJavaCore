@@ -5,11 +5,11 @@ package homework;
 /**
  * Created by Stan on 18.09.2016.
  */
-public class BookingComAPI implements API{
+class BookingComAPI implements API{
 
     private Room[] rooms = new Room[5];
 
-    public BookingComAPI(Room[] rooms) {
+    public BookingComAPI() {
         Room room1 = new Room(1001, 100, 1, "Hotel 1", "City 1");
         rooms[0] = room1;
         Room room2 = new Room(2002, 201, 2, "Hotel 2", "City 2");
@@ -23,14 +23,35 @@ public class BookingComAPI implements API{
 
     }
 
+
+
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
-        return new Room[0];
+        Room foundRoom[] = new Room[10];
+        int count=0;
+
+        for (Room item : rooms){
+            boolean cvr = item.getPrice()==price && item.getPersons()==persons;
+            boolean cvr1 = city == item.getCity() && item.getHotelName() == hotel;
+            if (cvr && cvr1){
+                foundRoom[count]=item;
+                count++;
+            }
+        }
+        if (foundRoom==null){
+            foundRoom[0] = new Room(0,0,0, "Nothing", "Nothing");
+        }
+        return foundRoom;
     }
 
+
     @Override
-    public Room[] getAll() {
-        return new Room[0];
+    public Room[] getRooms() {
+
+        return rooms;
+    }
+    public void setRooms(Room[] rooms){
+        this.rooms = rooms;
     }
 }

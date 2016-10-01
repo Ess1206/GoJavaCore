@@ -14,7 +14,6 @@ public class Room {
         this.id = id;
         this.price = price;
         this.persons = persons;
-        this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.city = cityName;
     }
@@ -68,7 +67,6 @@ public class Room {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,21 +74,28 @@ public class Room {
 
         Room room = (Room) o;
 
-        if (price !=0) {
-            if (price != room.price) return false;
-        }
-        if (city !=null) {
-            if (!city.equals(room.city)) return false;
-         }
-
-        return true;
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        return city != null ? city.equals(room.city) : room.city == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = price;
+        result = 31 * result + persons;
         result = 31 * result + (city != null ? city.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", hotelName='" + hotelName + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

@@ -24,8 +24,4 @@ public class DAOHardImpl implements DAO {
         return null;
     }
 
-    @Override
-    public Room[] getAll() {
-        return new Room[0];
-    }
 }
