@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/module4/module4.iml" filepath="$PROJECT_DIR$/module4/module4.iml" />
       <module fileurl="file://$PROJECT_DIR$/module5/module5.iml" filepath="$PROJECT_DIR$/module5/module5.iml" />
       <module fileurl="file://$PROJECT_DIR$/module6/module6.iml" filepath="$PROJECT_DIR$/module6/module6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module7/module7.iml" filepath="$PROJECT_DIR$/module7/module7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module8/module8.iml" filepath="$PROJECT_DIR$/module8/module8.iml" />
       <module fileurl="file://$PROJECT_DIR$/module3/questions/questions.iml" filepath="$PROJECT_DIR$/module3/questions/questions.iml" />
     </modules>
   </component>
