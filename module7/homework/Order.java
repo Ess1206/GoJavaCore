@@ -12,4 +12,5 @@ public class Order {
     String itemName;
     String shopIdentificator;
     User user;
+
 }
