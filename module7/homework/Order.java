@@ -68,4 +68,19 @@ public class Order {
     public User getUser() {
         return user;
     }
+
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+
 }
