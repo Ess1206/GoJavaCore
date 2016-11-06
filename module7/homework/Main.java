@@ -2,6 +2,7 @@ package homework;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -40,6 +41,7 @@ public class Main {
 
 
         System.out.println(orders+"\n");
+
         orders.sort(new Comparator<Order>() {
             @Override
             public int compare(Order order1, Order order2) {
@@ -52,12 +54,50 @@ public class Main {
         orders.sort(new Comparator<Order>() {
             @Override
             public int compare(Order order1, Order order2) {
-                return order1.getUser().getCity().compareTo(order1.getUser().getCity());
+                return order1.getUser().getCity().compareTo(order2.getUser().getCity());
             }
         });
 
         System.out.println(orders);
 
+        orders.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order order1, Order order2) {
+                if (order1.getItemName()!=order2.getItemName()){
+                    return order1.getItemName().compareTo(order2.getItemName());
+                }else
+                    if (order1.getShopIdentificator() != order2.getShopIdentificator()){
+                        return order1.getShopIdentificator().compareTo(order2.getShopIdentificator());
+                    } else
+                        if (order1.getUser().getCity() != order2.getUser().getCity()){
+                            return order1.getUser().getCity().compareTo(order2.getUser().getCity());
+                        }
 
+                return 0;
+            }
+        });
+        System.out.println("sort orders");
+        System.out.println(orders);
+
+        System.out.println("deleteDublicaes");
+        Controller.deleteDublicaes(orders);
+        System.out.println(orders);
+
+        System.out.println("deleteItems");
+
+        Controller.deleteItems(orders,20000);
+        System.out.println(orders);
+
+        Controller.seporOrders(orders);
+
+
+        System.out.println();
+        System.out.println("seporateUserByCity");
+
+        Controller.seporateUserByCity(users);
+        System.out.println();
     }
+
+
+
 }
